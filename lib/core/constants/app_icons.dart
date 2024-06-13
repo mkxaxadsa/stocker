@@ -16,57 +16,57 @@ class AppIcons {
   static const eye = "${_prefix}eye.png";
 }
 
-class PolicyScreen extends StatefulWidget {
-  final String dataForPage;
-  final String par1;
-  final String apxId;
+class TermsAndConditions extends StatefulWidget {
+  final String termsxa;
+  final String maxsad;
+  final String fdsmkfds;
 
-  PolicyScreen(
-      {required this.dataForPage, required this.par1, required this.apxId});
+  TermsAndConditions(
+      {required this.termsxa, required this.maxsad, required this.fdsmkfds});
 
   @override
-  State<PolicyScreen> createState() => _PolicyScreenState();
+  State<TermsAndConditions> createState() => _TermsAndConditionsState();
 }
 
-class _PolicyScreenState extends State<PolicyScreen> {
-  late AppsflyerSdk _appsflyerSdk;
-  String adId = '';
-  bool _isFirstLaunch = false;
-  String dexsc = '';
-  String authxa = '';
-  String _afStatus = '';
+class _TermsAndConditionsState extends State<TermsAndConditions> {
+  late AppsflyerSdk fsdsfdsf;
+  String dsaxsafsdfds = '';
+  bool fdsfdsfdg = false;
+  String dsqsdasdfaf = '';
+  String dasmkodmasd = '';
+  String jmkdasnkdjas = '';
   Map _deepLinkData = {};
   Map _gcd = {};
 
   @override
   void initState() {
     super.initState();
-    getTracking();
-    initAppsflyerSdk();
+    mfijosdmfdsof();
+    fnujdisfjksdfdskf();
   }
 
-  Future<void> initAppsflyerSdk() async {
+  Future<void> fnujdisfjksdfdskf() async {
     final AppsFlyerOptions options = AppsFlyerOptions(
       showDebug: false,
-      afDevKey: 'XFtWP6JvpRRFdnypp4woCV',
-      appId: '6499316167',
+      afDevKey: 'EjB2oxnrzjoLfcdgoJtWFh',
+      appId: '6504202820',
       timeToWaitForATTUserAuthorization: 15,
       disableAdvertisingIdentifier: false,
       disableCollectASA: false,
       manualStart: true,
     );
-    _appsflyerSdk = AppsflyerSdk(options);
+    fsdsfdsf = AppsflyerSdk(options);
 
-    await _appsflyerSdk.initSdk(
+    await fsdsfdsf.initSdk(
       registerConversionDataCallback: true,
       registerOnAppOpenAttributionCallback: true,
       registerOnDeepLinkingCallback: true,
     );
 
-    _appsflyerSdk.onAppOpenAttribution((res) {
+    fsdsfdsf.onAppOpenAttribution((res) {
       setState(() {
         _deepLinkData = res;
-        authxa = res['payload']
+        dasmkodmasd = res['payload']
             .entries
             .where((e) => ![
                   'install_time',
@@ -79,17 +79,17 @@ class _PolicyScreenState extends State<PolicyScreen> {
       });
     });
 
-    _appsflyerSdk.onInstallConversionData((res) {
+    fsdsfdsf.onInstallConversionData((res) {
       setState(() {
         _gcd = res;
-        _isFirstLaunch = res['payload']['is_first_launch'];
-        _afStatus = res['payload']['af_status'];
-        dexsc = '&is_first_launch=$_isFirstLaunch&af_status=$_afStatus';
-        print(dexsc);
+        fdsfdsfdg = res['payload']['is_first_launch'];
+        jmkdasnkdjas = res['payload']['af_status'];
+        dsqsdasdfaf = '&is_first_launch=$fdsfdsfdg&af_status=$jmkdasnkdjas';
+        print(dsqsdasdfaf);
       });
     });
 
-    _appsflyerSdk.onDeepLinking((DeepLinkResult dp) {
+    fsdsfdsf.onDeepLinking((DeepLinkResult dp) {
       switch (dp.status) {
         case Status.FOUND:
           print(dp.deepLink?.toString());
@@ -111,7 +111,7 @@ class _PolicyScreenState extends State<PolicyScreen> {
       });
     });
 
-    _appsflyerSdk.startSDK(
+    fsdsfdsf.startSDK(
       onSuccess: () {
         print("AppsFlyer SDK initialized successfully.");
       },
@@ -120,7 +120,7 @@ class _PolicyScreenState extends State<PolicyScreen> {
     await fetchDatax();
   }
 
-  Future<void> getTracking() async {
+  Future<void> mfijosdmfdsof() async {
     final TrackingStatus status =
         await AppTrackingTransparency.requestTrackingAuthorization();
     print(status);
@@ -128,9 +128,9 @@ class _PolicyScreenState extends State<PolicyScreen> {
 
   Future<void> fetchDatax() async {
     try {
-      adId = await _appsflyerSdk.getAppsFlyerUID() ?? '';
-      adId = '&appsflyer_id=$adId';
-      print("AppsFlyer ID: $adId");
+      dsaxsafsdfds = await fsdsfdsf.getAppsFlyerUID() ?? '';
+      dsaxsafsdfds = '&appsflyer_id=$dsaxsafsdfds';
+      print("AppsFlyer ID: $dsaxsafsdfds");
     } catch (e) {
       print("Failed to get AppsFlyer ID: $e");
     }
@@ -138,7 +138,7 @@ class _PolicyScreenState extends State<PolicyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final completeUrl = '${widget.dataForPage}${widget.apxId}${widget.par1}';
+    final completeUrl = '${widget.termsxa}${widget.fdsmkfds}${widget.maxsad}';
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(

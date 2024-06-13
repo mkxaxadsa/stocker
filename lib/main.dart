@@ -8,17 +8,17 @@ import 'package:football/features/main/puzzle/detail_puzzle/nn.dart';
 import 'package:football/features/splash/firebase_options.dart';
 import 'package:football/helpers/hive_helper.dart';
 
-late AppsflyerSdk _appsflyerSdk;
+late AppsflyerSdk gdfgfdgfddf;
 bool stat = false;
-String dexsc = '';
-String authxa = '';
+String gdfcdscs = '';
+String asdsafdaf = '';
 Map _deepLinkData = {};
 Map _gcd = {};
-bool _isFirstLaunch = false;
-String _afStatus = '';
-String _campaign = '';
-String adId = '';
-String _campaignId = '';
+bool hjgjhgjghhngvdf = false;
+String dsaxaxsa = '';
+String fdsfdsxsds = '';
+String fdsxsdfdsfds = '';
+String safdfdsfds = '';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,33 +30,33 @@ void main() async {
     minimumFetchInterval: const Duration(seconds: 25),
   ));
   await FirebaseRemoteConfig.instance.fetchAndActivate();
-  await NOtifications().activate();
-  await initAppsflyerSdk();
-  await getTracking();
+  await hfghjgfjfg().activate();
+  await fsdfdsfsgfd();
+  await fdsfsd();
   runApp(const FootballApp());
 }
 
-Future<void> initAppsflyerSdk() async {
+Future<void> fsdfdsfsgfd() async {
   final AppsFlyerOptions options = AppsFlyerOptions(
     showDebug: false,
-    afDevKey: 'XFtWP6JvpRRFdnypp4woCV',
-    appId: '6499316167',
+    afDevKey: 'EjB2oxnrzjoLfcdgoJtWFh',
+    appId: '6504202820',
     timeToWaitForATTUserAuthorization: 15,
     disableAdvertisingIdentifier: false,
     disableCollectASA: false,
     manualStart: true,
   );
-  _appsflyerSdk = AppsflyerSdk(options);
+  gdfgfdgfddf = AppsflyerSdk(options);
 
-  await _appsflyerSdk.initSdk(
+  await gdfgfdgfddf.initSdk(
     registerConversionDataCallback: true,
     registerOnAppOpenAttributionCallback: true,
     registerOnDeepLinkingCallback: true,
   );
 
-  _appsflyerSdk.onAppOpenAttribution((res) {
+  gdfgfdgfddf.onAppOpenAttribution((res) {
     _deepLinkData = res;
-    authxa = res['payload']
+    asdsafdaf = res['payload']
         .entries
         .where((e) => ![
               'install_time',
@@ -68,14 +68,14 @@ Future<void> initAppsflyerSdk() async {
         .join();
   });
 
-  _appsflyerSdk.onInstallConversionData((res) {
+  gdfgfdgfddf.onInstallConversionData((res) {
     _gcd = res;
-    _isFirstLaunch = res['payload']['is_first_launch'];
-    _afStatus = res['payload']['af_status'];
-    dexsc = '&is_first_launch=$_isFirstLaunch&af_status=$_afStatus';
+    hjgjhgjghhngvdf = res['payload']['is_first_launch'];
+    dsaxaxsa = res['payload']['af_status'];
+    gdfcdscs = '&is_first_launch=$hjgjhgjghhngvdf&af_status=$dsaxaxsa';
   });
 
-  _appsflyerSdk.onDeepLinking((DeepLinkResult dp) {
+  gdfgfdgfddf.onDeepLinking((DeepLinkResult dp) {
     switch (dp.status) {
       case Status.FOUND:
         print(dp.deepLink?.toString());
@@ -95,7 +95,7 @@ Future<void> initAppsflyerSdk() async {
     _deepLinkData = dp.toJson();
   });
 
-  _appsflyerSdk.startSDK(
+  gdfgfdgfddf.startSDK(
     onSuccess: () {
       print("AppsFlyer SDK initialized successfully.");
     },
@@ -103,7 +103,7 @@ Future<void> initAppsflyerSdk() async {
   await fetchDatax();
 }
 
-Future<void> getTracking() async {
+Future<void> fdsfsd() async {
   final TrackingStatus dasfa =
       await AppTrackingTransparency.requestTrackingAuthorization();
   print(dasfa);

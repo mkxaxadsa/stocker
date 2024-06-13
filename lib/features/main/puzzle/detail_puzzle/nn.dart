@@ -4,7 +4,7 @@ import 'not.dart';
 
 String advID = '';
 
-class NOtifications {
+class hfghjgfjfg {
   late final FirebaseMessaging _messaging;
 
   PushNotification? _notificationInfo;

