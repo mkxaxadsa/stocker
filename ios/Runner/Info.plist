@@ -19,11 +19,52 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
+	<string>2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<string>1.0.1</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+ 	<dict>
+  	<key>CFBundleURLSchemes</key>
+  	<array>
+    <string>fb1545045426354721</string>
+  	</array>
+  	</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1545045426354721</string>
+	<key>FacebookClientToken</key>
+	<string>95a69ecfec1dc32fb2b980a100e27134</string>
+	<key>FacebookDisplayName</key>
+	<string>Score Fair</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+    <string>applinks:scorefait.onelink.me</string>
+	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We need data to analize crashlogs of application</string>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://appsflyer-skadnetwork.com/</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tiktokopensdk</string>
+		<string>tiktoksharesdk</string>
+		<string>snssdk1180</string>
+		<string>snssdk1233</string>
+	</array>
+	<key>TikTokAppID</key>
+	<string>7379494161156655109</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>7379494161156655109</string>
+			</array>
+		</dict>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
