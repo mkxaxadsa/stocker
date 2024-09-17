@@ -31,6 +31,8 @@ class _FootballAppState extends State<FootballApp> {
                 termsxa: condxa,
                 maxsad: fdsfds,
                 fdsmkfds: midoasdsa,
+                keyID: '',
+                campId: '',
               );
             } else {
               return SplashScreen();

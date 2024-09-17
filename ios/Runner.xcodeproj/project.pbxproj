@@ -16,6 +16,10 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		A33D49CE2C997F3A00908D18 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33D49CD2C997F3A00908D18 /* iAd.framework */; };
+		A33D49D22C997F4500908D18 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33D49D12C997F4500908D18 /* AdSupport.framework */; };
+		A33D49D42C997F4B00908D18 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33D49D32C997F4B00908D18 /* AppTrackingTransparency.framework */; };
+		A33D49D62C99804300908D18 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33D49CF2C997F4000908D18 /* AdServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A33D49CD2C997F3A00908D18 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		A33D49CF2C997F4000908D18 /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
+		A33D49D12C997F4500908D18 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		A33D49D32C997F4B00908D18 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		A396F2352C1850550023C142 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		DE7BD5514277425643925481 /* Pods-RunnerTests.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile.xcconfig"; sourceTree = "<group>"; };
 		E4A37DBEE90A248B331879DE /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33D49D62C99804300908D18 /* AdServices.framework in Frameworks */,
+				A33D49D42C997F4B00908D18 /* AppTrackingTransparency.framework in Frameworks */,
 				7849B0090A9B4B8A2E9E148B /* Pods_Runner.framework in Frameworks */,
+				A33D49D22C997F4500908D18 /* AdSupport.framework in Frameworks */,
+				A33D49CE2C997F3A00908D18 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +111,10 @@
 		49F2BA5CC64DE9291C6C05F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A33D49D32C997F4B00908D18 /* AppTrackingTransparency.framework */,
+				A33D49D12C997F4500908D18 /* AdSupport.framework */,
+				A33D49CF2C997F4000908D18 /* AdServices.framework */,
+				A33D49CD2C997F3A00908D18 /* iAd.framework */,
 				0B04B53753AF52F2F8C628E2 /* Pods_Runner.framework */,
 				0F694652A94BF3F0FF1D1A89 /* Pods_RunnerTests.framework */,
 			);

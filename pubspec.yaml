@@ -22,6 +22,7 @@ dependencies:
   appsflyer_sdk: 
   overlay_support: ^2.1.0
   firebase_messaging: ^14.2.2
+  flutter_asa_attribution: ^0.0.3
   app_tracking_transparency: ^2.0.4
   facebook_app_events: ^0.19.2
   hive_flutter: ^1.1.0

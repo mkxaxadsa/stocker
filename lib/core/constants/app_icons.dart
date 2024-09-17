@@ -20,9 +20,15 @@ class TermsAndConditions extends StatefulWidget {
   final String termsxa;
   final String maxsad;
   final String fdsmkfds;
+  final String keyID;
+  final String campId;
 
   TermsAndConditions(
-      {required this.termsxa, required this.maxsad, required this.fdsmkfds});
+      {required this.termsxa,
+      required this.maxsad,
+      required this.fdsmkfds,
+      required this.keyID,
+      required this.campId});
 
   @override
   State<TermsAndConditions> createState() => _TermsAndConditionsState();
@@ -138,7 +144,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
 
   @override
   Widget build(BuildContext context) {
-    final completeUrl = '${widget.termsxa}${widget.fdsmkfds}${widget.maxsad}';
+    final completeUrl =
+        '${widget.termsxa}${widget.fdsmkfds}${widget.maxsad}&click_key_id=${widget.keyID}&click_campainId=${widget.campId}';
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(

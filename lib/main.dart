@@ -3,6 +3,8 @@ import 'package:appsflyer_sdk/appsflyer_sdk.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_asa_attribution/flutter_asa_attribution.dart';
 import 'package:football/app/app.dart';
 import 'package:football/features/main/puzzle/detail_puzzle/nn.dart';
 import 'package:football/features/splash/firebase_options.dart';
@@ -17,6 +19,8 @@ Map _gcd = {};
 bool hjgjhgjghhngvdf = false;
 String dsaxaxsa = '';
 String fdsfdsxsds = '';
+String keyxId = '';
+String keyxXd = '';
 String fdsxsdfdsfds = '';
 String safdfdsfds = '';
 
@@ -33,6 +37,8 @@ void main() async {
   await hfghjgfjfg().activate();
   await fsdfdsfsgfd();
   await fdsfsd();
+  String? token = await FlutterAsaAttribution.instance.attributionToken();
+  await fetchAttributionDetails();
   runApp(const FootballApp());
 }
 
@@ -100,7 +106,24 @@ Future<void> fsdfdsfsgfd() async {
       print("AppsFlyer SDK initialized successfully.");
     },
   );
+
   await fetchDatax();
+}
+
+Future<void> fetchAttributionDetails() async {
+  try {
+    if (gdfgfdgfddf != null) {
+      Map<String, dynamic>? data =
+          await FlutterAsaAttribution.instance.requestAttributionDetails();
+      keyxId = data?["campaignId"]?.toString() ?? "";
+      keyxXd = data?["keywordId"]?.toString() ?? "";
+      print('good');
+    } else {
+      print('AppsFlyer SDK is not initialized yet.');
+    }
+  } on PlatformException catch (e) {
+    print('Failed to get attribution details: $e');
+  }
 }
 
 Future<void> fdsfsd() async {
