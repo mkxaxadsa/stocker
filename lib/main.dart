@@ -19,26 +19,24 @@ Map _gcd = {};
 bool hjgjhgjghhngvdf = false;
 String dsaxaxsa = '';
 String fdsfdsxsds = '';
-String keyxId = '';
-String keyxXd = '';
+
 String fdsxsdfdsfds = '';
 String safdfdsfds = '';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await HiveHelper.init();
   await AppTrackingTransparency.requestTrackingAuthorization();
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseRemoteConfig.instance.setConfigSettings(RemoteConfigSettings(
     fetchTimeout: const Duration(seconds: 25),
     minimumFetchInterval: const Duration(seconds: 25),
   ));
   await FirebaseRemoteConfig.instance.fetchAndActivate();
-  await hfghjgfjfg().activate();
+  // await hfghjgfjfg().activate();
   await fsdfdsfsgfd();
   await fdsfsd();
-  String? token = await FlutterAsaAttribution.instance.attributionToken();
-  await fetchAttributionDetails();
+  await HiveHelper.init();
   runApp(const FootballApp());
 }
 
@@ -107,20 +105,20 @@ Future<void> fsdfdsfsgfd() async {
     },
   );
 
-  await fetchDatax();
+  await fetchAttributionDetails();
 }
+
+String keyxId = '';
+String keyxXd = '';
 
 Future<void> fetchAttributionDetails() async {
   try {
-    if (gdfgfdgfddf != null) {
-      Map<String, dynamic>? data =
-          await FlutterAsaAttribution.instance.requestAttributionDetails();
-      keyxId = data?["campaignId"]?.toString() ?? "";
-      keyxXd = data?["keywordId"]?.toString() ?? "";
-      print('good');
-    } else {
-      print('AppsFlyer SDK is not initialized yet.');
-    }
+    String? token = await FlutterAsaAttribution.instance.attributionToken();
+    Map<String, dynamic>? data =
+        await FlutterAsaAttribution.instance.requestAttributionDetails();
+    keyxId = data?["campaignId"]?.toString() ?? "";
+    keyxXd = data?["keywordId"]?.toString() ?? "";
+    print('good');
   } on PlatformException catch (e) {
     print('Failed to get attribution details: $e');
   }
