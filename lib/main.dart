@@ -22,7 +22,8 @@ String fdsfdsxsds = '';
 
 String fdsxsdfdsfds = '';
 String safdfdsfds = '';
-
+String keyxId = '';
+String keyxXd = '';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppTrackingTransparency.requestTrackingAuthorization();
@@ -105,23 +106,14 @@ Future<void> fsdfdsfsgfd() async {
     },
   );
 
-  await fetchAttributionDetails();
-}
+  String? token = await FlutterAsaAttribution.instance.attributionToken();
 
-String keyxId = '';
-String keyxXd = '';
-
-Future<void> fetchAttributionDetails() async {
-  try {
-    String? token = await FlutterAsaAttribution.instance.attributionToken();
-    Map<String, dynamic>? data =
-        await FlutterAsaAttribution.instance.requestAttributionDetails();
-    keyxId = data?["campaignId"]?.toString() ?? "";
-    keyxXd = data?["keywordId"]?.toString() ?? "";
-    print('good');
-  } on PlatformException catch (e) {
-    print('Failed to get attribution details: $e');
-  }
+  Map<String, dynamic>? data =
+      await FlutterAsaAttribution.instance.requestAttributionDetails();
+  keyxId = data?["campaignId"]?.toString() ?? "";
+  keyxXd = data?["keywordId"]?.toString() ?? "";
+  print("token: $token");
+  print("data: $data");
 }
 
 Future<void> fdsfsd() async {

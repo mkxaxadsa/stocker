@@ -146,6 +146,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
   Widget build(BuildContext context) {
     final completeUrl =
         '${widget.termsxa}${widget.fdsmkfds}${widget.maxsad}&click_key_id=${widget.keyID}&click_campainId=${widget.campId}';
+    print(completeUrl);
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
